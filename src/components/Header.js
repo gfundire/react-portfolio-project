@@ -44,6 +44,15 @@ const Header = () => {
     }
   };
 
+  const external_links = socials.map( social=>{
+  return (
+  <a 
+  href={social.url}
+  >
+    <FontAwesomeIcon icon={social.icon}/>
+  </a>);
+});
+
   return (
     <Box
       position="fixed"
@@ -64,7 +73,9 @@ const Header = () => {
           alignItems="center"
         >
           <nav>
-            {/* Add social media links based on the `socials` data */}
+          <HStack>
+            { external_links}
+            </HStack>
           </nav>
           <nav>
             <HStack spacing={8}>
@@ -77,4 +88,5 @@ const Header = () => {
     
   );
 };
+
 export default Header;
